@@ -1,0 +1,167 @@
+body {
+  background-color: #fff;
+  color: #005eb8;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 768px;
+}
+
+/* Header component */
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  margin: 0;
+}
+
+.logo-container img {
+  height: 50px;
+  margin: 0;
+}
+
+.logo-container p {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Request component */
+
+.form-container {
+  background-color: #fff;
+  height: 500px;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+label {
+  font-family: inherit;
+  font-size: 18px;
+  height: 2rem;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: left;
+  margin-right: 15px;
+  float: left;
+}
+
+input,
+select {
+  height: 2rem;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+.btns {
+  margin-top: 10px;
+}
+
+.btns button {
+  margin: 10px 1px 0 5px;
+  height: 3rem;
+  width: 240px;
+  font-size: 1rem;
+}
+
+.submit {
+  background-color: #009639;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #006747;
+  transform: scale(1.05);
+}
+
+.cancel {
+  background-color: #da291c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background-color: #941d14;
+  transform: scale(1.05);
+}
+
+.pathologist {
+  width: 320px;
+}
+
+/* Footer component */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  .title {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .title h1 {
+    margin: 10px 0;
+  }
+
+  /* .logo-container {
+    display: none;
+  } */
+
+  .form-container {
+    margin: auto 10px;
+  }
+
+  footer {
+    width: 600px;
+  }
+}
