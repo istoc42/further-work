@@ -9,7 +9,6 @@ function Header() {
                 <img src={logo} className='logo' alt='logo'/>
                 <p>Severn Pathology</p>
             </div>
-            
 
         </header>
     )
