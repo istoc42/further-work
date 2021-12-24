@@ -1,8 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <p>Created by Shaun Hudson</p>
-            <p>Version 0.1.0</p>
+            <p className="version">Created by Shaun Hudson | Version 0.1.0</p>
         </footer>
     )
 }

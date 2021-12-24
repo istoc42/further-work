@@ -1,4 +1,8 @@
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   color: #005eb8;
   font-family: Arial, Helvetica, sans-serif;
@@ -134,18 +138,24 @@ select {
 footer {
   display: flex;
   flex-direction: column;
-  margin: 5px;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.version {
   margin: 0;
 }
 
 /* Media queries */
 
 @media (max-width: 768px) {
+  body {
+    width: 768px;
+    overflow-x: hidden;
+  }
+
   .title {
-    justify-content: flex-start;
     align-items: center;
   }
 
@@ -153,15 +163,18 @@ footer {
     margin: 10px 0;
   }
 
-  /* .logo-container {
+  .logo-container {
     display: none;
-  } */
+  }
 
   .form-container {
     margin: auto 10px;
+    width: 400px;
+    height: auto;
   }
 
   footer {
-    width: 600px;
+    margin-top: 2rem;
+    width: 400px;
   }
 }
