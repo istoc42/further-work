@@ -1,7 +1,7 @@
 # Further Work Requesting System v0.1.0
 
 ## Made for Severn Pathology
-##By Shaun Hudson
+## By Shaun Hudson
 
 ### Description
 A lightweight app used to make requests to and from a table, with the purpose of requesting more work from a lab remotely.
