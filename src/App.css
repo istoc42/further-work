@@ -128,8 +128,13 @@ select {
   transform: scale(1.05);
 }
 
-.pathologist {
+.pathologist,
+.spares {
   width: 320px;
+}
+
+.submitting {
+  margin-top: 0.8rem;
 }
 
 /* NavBtn component */
@@ -166,6 +171,7 @@ select {
   align-items: center;
   justify-content: center;
 }
+
 /* Footer component */
 
 footer {
@@ -174,6 +180,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .version {

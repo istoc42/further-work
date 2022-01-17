@@ -1,0 +1,10 @@
+[ {
+    "cassette": "21G12345678",
+    "block": "a.1",
+    "surname": "Smith",
+    "tests": "Blood and stuff",
+    "spares": "No",
+    "comments": "Don't take it all",
+    "pathologist": "path-1",
+    "complete": "Yes"
+}]

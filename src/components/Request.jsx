@@ -1,40 +1,118 @@
-function Request() {
+import React, { useState } from 'react'
+
+
+
+export default function Request(props) {
+    const [submitting, setSubmitting] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setSubmitting(true)
+
+        setTimeout(() => {
+            setSubmitting(false)
+      }, 3000)}
+
+    const [cassette, setCassette] = useState('')
+    const [block, setBlock] = useState('')
+    const [surname, setSurname] = useState('')
+    const [tests, setTests] = useState('')
+    const [spares, setSpares] = useState('')
+    const [comments, setComments] = useState('')
+    const [pathologist, setPathologist] = useState('')
+
+    const changeCassette = (e) => {
+        setCassette(e.target.value)
+    }
+
+    const changeBlock = (e) => {
+        setBlock(e.target.value)
+    }
+
+    const changeSurname = (e) => {
+        setSurname(e.target.value)
+    }
+
+    const changeTests = (e) => {
+        setTests(e.target.value)
+    }
+
+    const changeSpares = (e) => {
+        setSpares(e.target.value)
+    }
+
+    const changeComments = (e) => {
+        setComments(e.target.value)
+    }
+
+    const changePathologist = (e) => {
+        setPathologist(e.target.value)
+    }
+
+    const clearState = () => {
+        setCassette('')
+        setBlock('')
+        setSurname('')
+        setTests('')
+        setSpares('')
+        setComments('')
+        setPathologist('')
+    }
+
+    const transferValue = (event) => {
+        event.preventDefault();
+        const val = {
+          cassette,
+          block,
+          surname,
+          tests,
+          spares,
+          comments,
+          pathologist
+        };
+        props.func(val)
+        clearState()
+
+    }
     return (
-        <div>
-            <div className="form-container">
+        <div>    
+            <form className="form-container" onSubmit={handleSubmit}>
                 <h3>New Histology Request</h3>
             
                     <div>
                         <label htmlFor="cassette">Cassette ID: </label>
-                        <input type="text" id="cassette" placeholder="(Scan slide barcode)" />
+                        <input name="cassette" type="text" id="cassette" placeholder="(Scan slide barcode)"   required autoFocus onChange={changeCassette}/>
                     </div>
             
                     <div>
                         <label htmlFor="block">Block ID: </label>
-                        <input type="text" id="block" placeholder="(If multiple blocks)" />
+                        <input name="block" type="text" id="block" placeholder="(If multiple blocks)"  onChange={changeBlock}/>
                     </div>
             
                     <div>
                         <label htmlFor="surname">Surname: </label>
-                        <input type="text" id="surname" />
+                        <input name="surname" type="text" id="surname" required onChange={changeSurname}/>
                     </div>
             
                     <div>
                         <label htmlFor="tests">Tests required: </label>
-                        <input type="text" id="tests" />
+                        <input name="tests" type="text" id="tests" required onChange={changeTests}/>
                     </div>
             
                     <div>
                         <label htmlFor="spares">Spares on case?</label>
-                        <input type="checkbox" id="spares-checkbox"/>
+                        <select name="spares" className="spares" onChange={changeSpares}>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor="comments">Comments: </label>
-                        <input type="text" id="comments" />
+                        <input name="comments" type="text" id="comments"  onChange={changeComments}/>
                     </div>
                     <div>
                         <label htmlFor="pathologist">Pathologist: </label>
-                        <select className="pathologist" id="pathologist">
+                        <select name="pathologist" className="pathologist" id="pathologist"  required onChange={changePathologist}>
                             <option value="null"> </option>
                             <option value="path-1">Pathologist 1</option>
                             <option value="path-2">Pathologist 2</option>
@@ -44,12 +122,16 @@ function Request() {
                     </div>
             
                     <div className="btns">
-                        <button className="submit">Submit</button>
+                        <button type="submit" className="submit" onClick={transferValue} >Submit</button>
                         <button className="cancel">Cancel</button>
                     </div>
-            </div>
+
+                    {submitting &&
+                        <div className='submitting'>
+                            Submitting form...
+                        </div>
+                    }
+            </form>
         </div>
     )
 }
-
-export default Request
