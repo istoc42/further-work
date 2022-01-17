@@ -15,8 +15,9 @@ A lightweight app used to make requests to and from a table, with the purpose of
 - View table of pending and completed requests.
 - Change state of pending requests to completed and vice versa.
 
-### Current version : v0.1.0
+### Current version : v0.1.2
 
 - UI for request form created
+- Link to requests page created
 
 Created in React
