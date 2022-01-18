@@ -15,6 +15,8 @@ function RequestList() {
                 <td>{request.spares}</td>
                 <td>{request.comments}</td>
                 <td>{request.pathologist}</td>
+                <td>{request.dateTime}</td>
+                <td><input type="checkbox" name="printed" id="printed" /></td>
             </tr>
         )
     })
@@ -28,6 +30,14 @@ function RequestList() {
     return (
         <div className="list-container">
             <Request func={addRows} />
+
+            <div>
+                <label htmlFor="search">
+                    Search by Cassette ID:
+                    <input type="text" name="search" id="search" />
+                </label>
+            </div>
+
             <div>
                 <table>
                     <thead>
@@ -39,7 +49,8 @@ function RequestList() {
                             <th>Spares on Case</th>
                             <th>Comments</th>
                             <th>Pathologist</th>
-                            <th>Complete?</th>
+                            <th>Date and Time</th>
+                            <th>Printed?</th>
                         </tr>
                     </thead>
                     <tbody>{tableRows}</tbody>
