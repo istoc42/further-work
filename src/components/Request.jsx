@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export default function Request(props) {
-    const [submitting, setSubmitting] = useState(false)
 
     function handleEnter(e) {
         if(e.keyCode === 13) {
@@ -11,16 +10,8 @@ export default function Request(props) {
             e.preventDefault()
         }
     }
-
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setSubmitting(true)
-        changeTimestamp()       
-
-        setTimeout(() => {
-            setSubmitting(false)
-      }, 3000)}
+    let date = new Date().toLocaleString()
 
     const [cassette, setCassette] = useState('')
     const [block, setBlock] = useState('')
@@ -29,7 +20,7 @@ export default function Request(props) {
     const [spares, setSpares] = useState('')
     const [comments, setComments] = useState('')
     const [pathologist, setPathologist] = useState('')
-    const [timestamp, setTimestamp] = useState('')
+    const [timestamp, setTimestamp] = useState(date)
 
     const changeCassette = (e) => {
         setCassette(e.target.value)
@@ -59,11 +50,12 @@ export default function Request(props) {
         setPathologist(e.target.value)
     }
 
+    
     const changeTimestamp = (e) => {
-        setTimestamp(Date.now())
+        setTimestamp(date)
     }
 
-    const clearState = () => {
+    const clearState = (e) => {
         setCassette('')
         setBlock('')
         setSurname('')
@@ -73,8 +65,13 @@ export default function Request(props) {
         setPathologist('')
     }
 
+    const handleCancel = (e) => {
+        clearState()
+    }
+
     const transferValue = (event) => {
         event.preventDefault();
+        changeTimestamp()
         const val = {
           cassette,
           block,
@@ -91,27 +88,27 @@ export default function Request(props) {
     }
     return (
         <div>    
-            <form className="form-container" onSubmit={handleSubmit}>
+            <form className="form-container" onSubmit={transferValue}>
                 <h3>New Histology Request</h3>
             
                     <div>
                         <label htmlFor="cassette">Cassette ID: </label>
-                        <input name="cassette" type="text" id="cassette" placeholder="(Scan slide barcode)" required autoFocus autocomplete="off" onKeyDown={handleEnter} onChange={changeCassette}/>
+                        <input name="cassette" type="text" id="cassette" placeholder="(Scan slide barcode)" required autoFocus autoComplete="off" onKeyDown={handleEnter} onChange={changeCassette}/>
                     </div>
             
                     <div>
                         <label htmlFor="block">Block ID: </label>
-                        <input name="block" type="text" id="block" placeholder="(If multiple blocks)" autocomplete="off" onKeyDown={handleEnter} onChange={changeBlock}/>
+                        <input name="block" type="text" id="block" placeholder="(If multiple blocks)" autoComplete="off" onKeyDown={handleEnter} onChange={changeBlock}/>
                     </div>
             
                     <div>
                         <label htmlFor="surname">Surname: </label>
-                        <input name="surname" type="text" id="surname" required autocomplete="off" onKeyDown={handleEnter} onChange={changeSurname}/>
+                        <input name="surname" type="text" id="surname" required autoComplete="off" onKeyDown={handleEnter} onChange={changeSurname}/>
                     </div>
             
                     <div>
                         <label htmlFor="tests">Tests required: </label>
-                        <input name="tests" type="text" id="tests" required autocomplete="off" onKeyDown={handleEnter} onChange={changeTests}/>
+                        <input name="tests" type="text" id="tests" required autoComplete="off" onKeyDown={handleEnter} onChange={changeTests}/>
                     </div>
             
                     <div>
@@ -138,15 +135,11 @@ export default function Request(props) {
                     </div>
             
                     <div className="btns">
-                        <button type="submit" className="submit" onSubmit={transferValue} >Submit</button>
-                        <button className="cancel">Cancel</button>
+                        <button type="submit" className="submit" >Submit</button>
+                        <button type='reset' className="cancel" onClick={handleCancel}>Cancel</button>
                     </div>
 
-                    {submitting &&
-                        <div className='submitting'>
-                            Submitting form...
-                        </div>
-                    }
+                   
             </form>
         </div>
     )

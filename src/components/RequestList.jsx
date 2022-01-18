@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import jsonData from '../data.json'
 import Request from './Request'
+import { v4 as uuidv4} from 'uuid'
 
 function RequestList() {
     const [requestData, setRequestData] = useState(jsonData)
 
     const tableRows = requestData.map((request) => {
         return (
-            <tr>
+            <tr key={uuidv4()}>
                 <td>{request.cassette}</td>
                 <td>{request.block}</td>
                 <td>{request.surname}</td>
@@ -15,7 +16,7 @@ function RequestList() {
                 <td>{request.spares}</td>
                 <td>{request.comments}</td>
                 <td>{request.pathologist}</td>
-                <td>{request.dateTime}</td>
+                <td>{request.timestamp}</td>
                 <td><input type="checkbox" name="printed" id="printed" /></td>
             </tr>
         )
@@ -29,14 +30,8 @@ function RequestList() {
 
     return (
         <div className="list-container">
-            <Request func={addRows} />
 
-            <div>
-                <label htmlFor="search">
-                    Search by Cassette ID:
-                    <input type="text" name="search" id="search" />
-                </label>
-            </div>
+            <Request func={addRows} />
 
             <div>
                 <table>

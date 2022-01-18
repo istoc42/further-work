@@ -6,7 +6,8 @@
         "tests": "p16",
         "spares": "No",
         "comments": "Before end of the week please",
-        "pathologist": "Jon Oxley"
+        "pathologist": "Jon Oxley",
+        "timestamp": "12:00 11/1/2022"
     },
     {
         "cassette": "21H00220635",
@@ -15,7 +16,8 @@
         "tests": "Recut H7E urgently please",
         "spares": "No",
         "comments": "The case has gone missing and is on MDT tomorrow!",
-        "pathologist": "Richard Daly"
+        "pathologist": "Richard Daly",
+        "timestamp": "12:00 11/1/2022"
     }, 
     {
         "cassette": "21H00662300",
@@ -24,7 +26,8 @@
         "tests": "KRAS, NRAS, BRAF, MSI",
         "spares": "No",
         "comments": "Form in molecular folder",
-        "pathologist": "Audit"
+        "pathologist": "Audit",
+        "timestamp": "12:00 11/1/2022"
     },
     {
         "cassette": "21G12345678",
@@ -33,6 +36,7 @@
         "tests": "Levels x3",
         "spares": "Yes",
         "comments": "ASAP",
-        "pathologist": "Mo Khan"
+        "pathologist": "Mo Khan",
+        "timestamp": "12:00 11/1/2022"
     }
 ]
