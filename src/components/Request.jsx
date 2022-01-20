@@ -69,8 +69,8 @@ export default function Request(props) {
         clearState()
     }
 
-    const transferValue = (event) => {
-        event.preventDefault();
+    const transferValue = (e) => {
+        e.preventDefault();
         changeTimestamp()
         const val = {
           cassette,
@@ -83,12 +83,12 @@ export default function Request(props) {
           timestamp
         };
         props.func(val)
-        clearState()
+        handleCancel()
 
     }
     return (
         <div>    
-            <form className="form-container" onSubmit={transferValue}>
+            <form className="form-container" >
                 <h3>New Histology Request</h3>
             
                     <div>
@@ -135,7 +135,7 @@ export default function Request(props) {
                     </div>
             
                     <div className="btns">
-                        <button type="submit" className="submit" >Submit</button>
+                        <button type="submit" className="submit" onClick={transferValue}>Submit</button>
                         <button type='reset' className="cancel" onClick={handleCancel}>Cancel</button>
                     </div>
 
