@@ -88,12 +88,12 @@ export default function Request(props) {
     }
     return (
         <div>    
-            <form className="form-container" >
+            <form className="form-container" onSubmit={transferValue}>
                 <h3>New Histology Request</h3>
             
                     <div>
                         <label htmlFor="cassette">Cassette ID: </label>
-                        <input name="cassette" type="text" id="cassette" placeholder="(Scan slide barcode)" required autoFocus autoComplete="off" onKeyDown={handleEnter} onChange={changeCassette}/>
+                        <input name="cassette" type="text" id="cassette" placeholder="(Scan slide barcode)" required maxLength="11" autoFocus autoComplete="off" onKeyDown={handleEnter} onChange={changeCassette}/>
                     </div>
             
                     <div>
@@ -125,8 +125,8 @@ export default function Request(props) {
                     </div>
                     <div>
                         <label htmlFor="pathologist">Pathologist: </label>
-                        <select name="pathologist" className="pathologist" id="pathologist"  required onKeyDown={handleEnter} onChange={changePathologist}>
-                            <option value="null"> </option>
+                        <select name="pathologist" className="pathologist" id="pathologist" required onKeyDown={handleEnter} onChange={changePathologist}>
+                            <option selected value=""> -- Select Pathologist -- </option>
                             <option value="Jon Oxley">Jon Oxley</option>
                             <option value="Mo Khan">Mo Khan</option>
                             <option value="Richard Daly">Richard Daly</option>
@@ -135,8 +135,8 @@ export default function Request(props) {
                     </div>
             
                     <div className="btns">
-                        <button type="submit" className="submit" onClick={transferValue}>Submit</button>
-                        <button type='reset' className="cancel" onClick={handleCancel}>Cancel</button>
+                        <button type="submit" className="submit" >Submit</button>
+                        <button type='reset' className="cancel" onClick={handleCancel}>Clear</button>
                     </div>
 
                    

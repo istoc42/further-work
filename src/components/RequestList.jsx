@@ -29,30 +29,33 @@ function RequestList() {
     }
 
     return (
-        <div className="list-container">
-
+        <div>
             <Request func={addRows} />
-
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Cassette ID</th>
-                            <th>Block ID</th>
-                            <th>Surname</th>
-                            <th>Tests Required</th>
-                            <th>Spares on Case</th>
-                            <th>Comments</th>
-                            <th>Pathologist</th>
-                            <th>Date and Time</th>
-                            <th>Printed?</th>
-                        </tr>
-                    </thead>
-                    <tbody>{tableRows}</tbody>
-                </table>
+            <div className="list-container">
+                <div>
+                    <hr></hr>
+                    <h3>Current Requests</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cassette ID</th>
+                                <th>Block ID</th>
+                                <th>Surname</th>
+                                <th>Tests Required</th>
+                                <th>Spares on Case</th>
+                                <th>Comments</th>
+                                <th>Pathologist</th>
+                                <th>Date and Time</th>
+                                <th>Printed?</th>
+                            </tr>
+                        </thead>
+                        <tbody>{tableRows}</tbody>
+                    </table>
+                    <hr></hr>
+                </div>
+        
             </div>
-            
-        </div>
+    </div>
     )
 }
 
