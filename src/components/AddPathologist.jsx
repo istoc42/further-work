@@ -12,7 +12,7 @@ export default function Pathologist(props) {
         setName(e.target.value)
     }
 
-    const clearState = (e) => {
+    const clearState = () => {
         setName('')
     }
 
@@ -31,7 +31,22 @@ export default function Pathologist(props) {
             <div className="add-path-container">
                 <label htmlFor="name">Pathologist Name: </label>
                 <input type="text" className='new-path-input' onChange={changeName}></input>
-                <button className="addBtn" onClick={transferValue}>Add Pathologist</button>
+                    <button className="addBtn" onClick={transferValue}>Add Pathologist</button>
+
+                <div className="path-btn-container">
+                    <div>
+                        
+                        <button className="editBtn">Edit Pathologist</button>
+                        <p style={{ color: 'orange'}}>Edit function not in place</p>
+                        
+                    </div>
+
+
+                    <div>
+                        <button className="removeBtn">Remove Pathologist</button>
+                        <p style={{ color: 'red'}}>Remove function not in place</p>
+                    </div>
+                </div>
             </div>
         )
 

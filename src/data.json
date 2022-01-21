@@ -7,7 +7,7 @@
         "spares": "No",
         "comments": "Before end of the week please",
         "pathologist": "Jon Oxley",
-        "timestamp": "12:00 11/1/2022"
+        "timestamp": "11/01/2021, 09:39:04"
     },
     {
         "cassette": "21H00220635",
@@ -17,7 +17,7 @@
         "spares": "No",
         "comments": "The case has gone missing and is on MDT tomorrow!",
         "pathologist": "Richard Daly",
-        "timestamp": "12:00 11/1/2022"
+        "timestamp": "13/01/2021, 12:55:22"
     }, 
     {
         "cassette": "21H00662300",
@@ -27,7 +27,7 @@
         "spares": "No",
         "comments": "Form in molecular folder",
         "pathologist": "Audit",
-        "timestamp": "12:00 11/1/2022"
+        "timestamp": "18/01/2021, 15:32:12"
     },
     {
         "cassette": "21G12345678",
@@ -37,6 +37,6 @@
         "spares": "Yes",
         "comments": "ASAP",
         "pathologist": "Mo Khan",
-        "timestamp": "12:00 11/1/2022"
+        "timestamp": "20/01/2021, 14:01:53"
     }
 ]
